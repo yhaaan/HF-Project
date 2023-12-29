@@ -25,7 +25,10 @@ public class diceManager : MonoBehaviour
         sum = 0;
         foreach(dice dice in dices)
         {
-            dice.ChangeN();
+            if(dice.isKept)
+            {
+                dice.ChangeN();
+            }
             sum += dice.power;
         }
         sumText.text = "Sum = " + sum;
