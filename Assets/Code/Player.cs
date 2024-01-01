@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     public float maxHP;
     public float curruntHP;
+
+
     void OnEnable()
     {
         maxHP = 100;
@@ -22,4 +25,5 @@ public class Player : MonoBehaviour
             curruntHP = 0;
         }
     }
+
 }
