@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 673024065879755531}
   - component: {fileID: 3709305366251558573}
   - component: {fileID: 6865593850397470923}
-  - component: {fileID: -2306515925349502795}
   m_Layer: 5
   m_Name: SkillButton
   m_TagString: Untagged
@@ -201,7 +200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -2306515925349502795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: skill, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -213,15 +212,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-2306515925349502795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8634459692828191377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1bc735d76544bc46b740e5960b7a665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
