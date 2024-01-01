@@ -5,19 +5,11 @@ using UnityEngine.UI;
 
 public class DiceManager : MonoBehaviour
 {
-    public Dice[] dices;
+    public List<Dice> dices = new List<Dice>();
     public int sum = 0;
-    public Text sumText;
-    public Text hpText;
-    public Slider hpSlider;
-    public float maxHP;
-    public float currentHP;
+
     private void OnEnable()
     {
-        dices = this.GetComponentsInChildren<Dice>();
-        sumText.text = "Sum = " + sum;
-        hpText.text = "hp = " + currentHP;
-        hpSlider.value = currentHP / maxHP;
     }
 
     public void Reroll()
@@ -31,15 +23,9 @@ public class DiceManager : MonoBehaviour
             }
             sum += dice.power;
         }
-        sumText.text = "Sum = " + sum;
     }
 
-    public void Attack()
-    {
-        currentHP = currentHP - sum;
-        hpSlider.value = currentHP / maxHP;
-        hpText.text = "hp = " + currentHP;
-    }
+  
 
     
 }
