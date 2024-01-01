@@ -406,6 +406,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
+--- !u!114 &199007585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525266590507371827, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
+  m_PrefabInstance: {fileID: 217978184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303f4fe3f3423945bd7041678c9e1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &217978184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,6 +428,10 @@ PrefabInstance:
     - target: {fileID: 3969699309550022148, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
       propertyPath: m_Name
       value: Dice (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969699309550022148, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8952841442465583739, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1823,6 +1838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de11d069ac014846afeb742004fe076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sumText: {fileID: 0}
+  hpText: {fileID: 0}
+  hpSlider: {fileID: 0}
+  maxHP: 0
+  currentHP: 0
 --- !u!4 &722605245
 Transform:
   m_ObjectHideFlags: 0
@@ -1848,6 +1868,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6418689902350152160, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
   m_PrefabInstance: {fileID: 283509320}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &863469553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525266590507371827, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
+  m_PrefabInstance: {fileID: 1853200480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303f4fe3f3423945bd7041678c9e1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &923494256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1979,7 @@ GameObject:
   - component: {fileID: 974923122}
   - component: {fileID: 974923121}
   m_Layer: 0
-  m_Name: diceManager
+  m_Name: DiceManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1966,13 +1997,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8da6bf419bcd254a92cb1376180f014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dices: []
+  dices:
+  - {fileID: 1837451209}
+  - {fileID: 1837451209}
+  - {fileID: 2113903071}
+  - {fileID: 863469553}
+  - {fileID: 1555026816}
+  - {fileID: 199007585}
   sum: 0
-  sumText: {fileID: 1831965789}
-  hpText: {fileID: 1673609237}
-  hpSlider: {fileID: 923494258}
-  maxHP: 100
-  currentHP: 100
 --- !u!4 &974923122
 Transform:
   m_ObjectHideFlags: 0
@@ -1986,11 +2018,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1837451206}
-  - {fileID: 2113903068}
-  - {fileID: 609394617}
-  - {fileID: 1095128453}
   - {fileID: 53635867}
+  - {fileID: 1095128453}
+  - {fileID: 609394617}
+  - {fileID: 2113903068}
+  - {fileID: 1837451206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &984686709
@@ -2174,7 +2206,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 974923121}
-        m_TargetAssemblyTypeName: diceManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: DiceManager, Assembly-CSharp
         m_MethodName: Reroll
         m_Mode: 1
         m_Arguments:
@@ -2704,6 +2736,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
+--- !u!114 &1555026816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525266590507371827, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
+  m_PrefabInstance: {fileID: 370777635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303f4fe3f3423945bd7041678c9e1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1562192510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,6 +3366,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8952841442465583739, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
   m_PrefabInstance: {fileID: 1501568655}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1837451209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525266590507371827, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
+  m_PrefabInstance: {fileID: 1501568655}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303f4fe3f3423945bd7041678c9e1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1853200480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3400,6 +3454,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8952841442465583739, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
   m_PrefabInstance: {fileID: 631769895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2113903071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525266590507371827, guid: e3cbe9174a8992241bc8ecb900003259, type: 3}
+  m_PrefabInstance: {fileID: 631769895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303f4fe3f3423945bd7041678c9e1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
