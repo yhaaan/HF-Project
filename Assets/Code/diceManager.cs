@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class diceManager : MonoBehaviour
+public class DiceManager : MonoBehaviour
 {
-    public dice[] dices;
+    public Dice[] dices;
     public int sum = 0;
     public Text sumText;
     public Text hpText;
@@ -14,7 +14,7 @@ public class diceManager : MonoBehaviour
     public float currentHP;
     private void OnEnable()
     {
-        dices = this.GetComponentsInChildren<dice>();
+        dices = this.GetComponentsInChildren<Dice>();
         sumText.text = "Sum = " + sum;
         hpText.text = "hp = " + currentHP;
         hpSlider.value = currentHP / maxHP;
@@ -23,7 +23,7 @@ public class diceManager : MonoBehaviour
     public void Reroll()
     {
         sum = 0;
-        foreach(dice dice in dices)
+        foreach(Dice dice in dices)
         {
             if(dice.isKept)
             {

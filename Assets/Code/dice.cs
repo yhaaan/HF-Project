@@ -4,7 +4,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class dice : MonoBehaviour
+public class Dice : MonoBehaviour
 {
     public int num;
     public int power;

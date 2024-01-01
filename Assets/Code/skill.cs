@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class skill : MonoBehaviour
+public class Skill : MonoBehaviour
 {
     /// <summary>
     /// 테스트(디버그)용 메소드
     /// </summary>
     public void OnClick() {
-        Debug.Log("!");
-        //int print = yatchCalculator.GetUpperPower(dices, 2);
-        //Debug.Log(print);
+        Debug.Log("스킬 클릭됨");
     }
 
     /// <summary>
