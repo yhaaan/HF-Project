@@ -9,11 +9,10 @@ public class Dice : MonoBehaviour
     public int num;
     public int power;
     public bool isKept;
-    public Sprite[] dices;
+    public Sprite[] diceImage;
     private SpriteRenderer sprite;
     private Transform trans;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         isKept = true;
@@ -26,7 +25,7 @@ public class Dice : MonoBehaviour
     {
         num = Random.Range(1, 7);
         power = num;
-        sprite.sprite = dices[num];
+        sprite.sprite = diceImage[num];
     }
     
     public void OnMouseDown()
