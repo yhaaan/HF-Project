@@ -35,7 +35,7 @@ public class BattleManager : MonoBehaviour
         enemyHpText.text = enemyCurHP.ToString();
     }
 
-    public void Attact(int damage)
+    public void Attack(int damage)
     {
         enemyCurHP -= damage;
         if (enemyCurHP < 0) enemyCurHP = 0;

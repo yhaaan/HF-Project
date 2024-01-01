@@ -12,13 +12,14 @@ public class DiceManager : MonoBehaviour
 
     private void OnEnable()
     {
+        
     }
 
     public void Reroll()
     {
         foreach(Dice dice in dices)
         {
-            if(dice.isKept)
+            if(!dice.isKept)
             {
                 dice.ChangeN();
             }
@@ -77,7 +78,7 @@ public class DiceManager : MonoBehaviour
             }
             damage += dice.num;
         }
-        if(sortDict.Values.Any(value => value > 4))
+        if(sortDict.ContainsValue(4) | sortDict.ContainsValue(5))
         {
             return damage;
         } else
@@ -85,6 +86,10 @@ public class DiceManager : MonoBehaviour
             return 0;
         }
     }
+    /// <summary>
+    /// FullHouse의 스킬 데미지를 반환
+    /// </summary>
+    /// <returns></returns>
     public int GetFullHouseDamage()
     {
         int damage = 0;
@@ -108,8 +113,70 @@ public class DiceManager : MonoBehaviour
             return 0;
         }
     }
-    public int GetSmallSTDamage()
+    /// <summary>
+    /// SmallStraight는 매개변수에 4입력, LargeStraight는 매개변수에 5입력
+    /// </summary>
+    /// <param name="straightNum"></param>
+    /// <returns></returns>
+    public int GetStraightDamage(int straightNum)
     {
-        return 30;
+        List<int> diceNums = new List<int>();
+        foreach(Dice dice in dices)
+        {
+            diceNums.Add(dice.num);
+        }
+        diceNums.Sort();
+        diceNums = diceNums.Distinct().ToList();
+        int preNum = 0;
+        int count = 1;
+        foreach(int diceNum in diceNums)
+        {
+            if(preNum == 0)
+            {
+                preNum = diceNum;
+                continue;
+            }
+            if(preNum + 1 == diceNum)
+            {
+                count += 1;
+            } else
+            {
+                count = 0;
+            }
+            preNum = diceNum;
+        }
+        if(count >= straightNum)
+        {
+            return 15 * (straightNum - 3);
+        } else
+        {
+            return 0;
+        }
+    }
+    /// <summary>
+    /// FullHouse의 스킬 데미지를 반환
+    /// </summary>
+    /// <returns></returns>
+    public int GetYachtDamage()
+    {
+        var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
+        foreach(Dice dice in dices)
+        {
+            if(sortDict.ContainsKey(dice.num))
+            {
+                sortDict[dice.num] += 1;
+            } else
+            {
+                sortDict.Add(dice.num, 1);
+            }
+            Debug.Log(dice.num.ToString() + sortDict[dice.num]);
+        }
+        if(sortDict.ContainsValue(5))
+        {
+            return 50;
+        } else
+        {
+            return 0;
+        }
     }
 }

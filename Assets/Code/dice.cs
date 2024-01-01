@@ -15,7 +15,7 @@ public class Dice : MonoBehaviour
 
     private void Awake()
     {
-        isKept = true;
+        isKept = false;
         sprite = GetComponent<SpriteRenderer>();
         trans = GetComponent<Transform>();
         ChangeN();
@@ -33,11 +33,11 @@ public class Dice : MonoBehaviour
         if(isKept)
         {
             isKept = false;
-            trans.rotation = Quaternion.Euler(0,0,45);
+            trans.rotation = Quaternion.Euler(0,0,0);
         } else if (!isKept)
         {
             isKept = true;
-            trans.rotation = Quaternion.Euler(0,0,0);
+            trans.rotation = Quaternion.Euler(0,0,45);
         }
     }
     void Update()

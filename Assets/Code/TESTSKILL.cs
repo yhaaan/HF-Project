@@ -10,11 +10,10 @@ public class TESTSKILL : MonoBehaviour
     
     public void Attack()
     {
-        battlemanager.Attact(AD);
+        battlemanager.Attack(AD);
     }
-
     public void Heal()
     {
-        battlemanager.Attact(AP);
+        battlemanager.Attack(AP);
     }
 }
