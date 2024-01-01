@@ -10,16 +10,15 @@ public class Dice : MonoBehaviour
     public int power;
     public bool isKept;
     public Sprite[] dices;
-    public Sprite testSprite;
-    private UnityEngine.UI.Image image;
-    private RectTransform recttTransform;
+    private SpriteRenderer sprite;
+    private Transform trans;
 
     // Start is called before the first frame update
     private void Awake()
     {
         isKept = true;
-        image = GetComponent<UnityEngine.UI.Image>();
-        recttTransform = GetComponent<RectTransform>();
+        sprite = GetComponent<SpriteRenderer>();
+        trans = GetComponent<Transform>();
         ChangeN();
     }
 
@@ -27,19 +26,19 @@ public class Dice : MonoBehaviour
     {
         num = Random.Range(1, 7);
         power = num;
-        image.sprite = dices[num];
+        sprite.sprite = dices[num];
     }
     
-    public void OnClick()
+    public void OnMouseDown()
     {
         if(isKept)
         {
             isKept = false;
-            recttTransform.rotation = Quaternion.Euler(0,0,45);
+            trans.rotation = Quaternion.Euler(0,0,45);
         } else if (!isKept)
         {
             isKept = true;
-            recttTransform.rotation = Quaternion.Euler(0,0,0);
+            trans.rotation = Quaternion.Euler(0,0,0);
         }
     }
     void Update()
