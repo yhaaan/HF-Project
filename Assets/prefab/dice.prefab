@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3168802537587492492}
   - component: {fileID: 8525266590507371827}
   m_Layer: 0
-  m_Name: dice
+  m_Name: Dice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

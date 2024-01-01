@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (2)
+      value: SkillButton (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -399,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (7)
+      value: SkillButton (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -568,7 +568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (5)
+      value: SkillButton (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -833,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (12)
+      value: SkillButton (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1067,7 +1067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (9)
+      value: SkillButton (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1263,7 +1263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (4)
+      value: SkillButton (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1449,7 +1449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (10)
+      value: SkillButton (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1797,7 +1797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (1)
+      value: SkillButton (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2115,7 +2115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (8)
+      value: SkillButton (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2350,7 +2350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (11)
+      value: SkillButton (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2917,7 +2917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (6)
+      value: SkillButton (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3197,7 +3197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8634459692828191377, guid: 01987790aaafe854f87d97ca04e314c4, type: 3}
       propertyPath: m_Name
-      value: skillButton (3)
+      value: SkillButton (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
