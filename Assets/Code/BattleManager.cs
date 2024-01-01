@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("# HP")]
+    public Text sumText;
+    public Text hpText;
+    public Slider hpSlider;
+    public float maxHP;
+    public float currentHP;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
