@@ -4,6 +4,10 @@ using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Desc :: 각각의 주사위 정보
+ * 주사위의 Sprite나 Mouse 이벤트 등을 처리 
+ */
 public class Dice : MonoBehaviour
 {
     public int num;

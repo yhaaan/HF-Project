@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Desc :: Enemy 정보
+ */
 public class Enemy : MonoBehaviour
 {
-    public float maxHP;
+    public float maxHP= 2000;
     public float curruntHP;
     void OnEnable()
     {
-        maxHP = 100;
         curruntHP = maxHP;
     }
 

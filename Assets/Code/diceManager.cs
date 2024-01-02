@@ -4,7 +4,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/*
+ * Desc :: 주사위와 관련된 모든 기능 수행
+ */
 
 public class DiceManager : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class DiceManager : MonoBehaviour
         
     }
 
-    public void Reroll()
+    public void ChangeAllDice()
     {
         foreach(Dice dice in dices)
         {
@@ -25,32 +27,7 @@ public class DiceManager : MonoBehaviour
                 dice.ChangeN();
             }
         }
-        //아래는 테스트 코드입니다.
-        if(testSkillNum <= 6)
-        {
-            Debug.Log("상단스킬 damage : " + GetUpperDamage(testSkillNum));
-        } else if (testSkillNum == 7)
-        {
-            Debug.Log("초이스 damage : " + GetChoiceDamage());
-        } else if (testSkillNum == 8)
-        {
-            Debug.Log("포카인드 damage : " + GetFourKindDamage());
-        } else if (testSkillNum == 9)
-        {
-            Debug.Log("풀하우스 damage : " + GetFullHouseDamage());
-        } else if (testSkillNum == 10)
-        {
-            Debug.Log("스몰스트 damage : " + GetStraightDamage(4));
-        } else if (testSkillNum == 11)
-        {
-            Debug.Log("라지스트 damage : " + GetStraightDamage(5));
-        } else if (testSkillNum == 12)
-        {
-            Debug.Log("야추 damage : " + GetYachtDamage());
-        }else
-        {
-            Debug.Log("testSkillNum 초과");
-        }
+
     }
     /// <summary>
     /// 스킬번호를 입력받아 1~6번 스킬의 데미지를 반환
@@ -58,6 +35,45 @@ public class DiceManager : MonoBehaviour
     /// <param name="dices"></param>
     /// <param name="diceNum"></param>
     /// <returns></returns>
+    
+   
+    public int GetDamege(int skillNum)
+    {
+        if (skillNum < 6)
+        {
+            return GetUpperDamage(skillNum+1);
+        }
+        else if (skillNum == 6)
+        {
+          return GetChoiceDamage();
+        }
+        else if (skillNum == 7)
+        {
+            return GetFourKindDamage();
+        }
+        else if (skillNum == 8)
+        {
+            return GetFullHouseDamage();
+        }
+        else if (skillNum == 9)
+        {
+            return GetStraightDamage(4);
+        }
+        else if (skillNum == 10)
+        {
+            return GetStraightDamage(5);
+        }
+        else if (skillNum == 11)
+        {
+            return GetYachtDamage();
+        }
+        else
+        {
+            return 1000;
+        }
+    }
+   
+
     public int GetUpperDamage(int diceNum)
     {
         int damage = 0;
@@ -200,7 +216,7 @@ public class DiceManager : MonoBehaviour
             {
                 sortDict.Add(dice.num, 1);
             }
-            Debug.Log(dice.num.ToString() + sortDict[dice.num]);
+            //Debug.Log(dice.num.ToString() + sortDict[dice.num]);
         }
         if(sortDict.ContainsValue(5))
         {

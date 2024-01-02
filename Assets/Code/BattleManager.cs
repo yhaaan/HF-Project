@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Desc :: 배틀과 관련된 잡무 수행
+ */
 public class BattleManager : MonoBehaviour
 {
     [Header("# Player")]
@@ -19,6 +22,10 @@ public class BattleManager : MonoBehaviour
     public float enemyMaxHP;
     public float enemyCurHP;
 
+    [Header("# Skill Button")]
+    public GameObject skillButtons;
+    public Button[] skills;
+
     [Header("# DiceManager")]
     public DiceManager diceManager;
 
@@ -33,6 +40,15 @@ public class BattleManager : MonoBehaviour
         enemyCurHP = enemy.curruntHP;
         enemyHpSlider.value = enemyCurHP / enemyMaxHP;
         enemyHpText.text = enemyCurHP.ToString();
+
+        skills = skillButtons.GetComponentsInChildren<Button>();
+    }
+
+
+    public void Reroll()
+    {
+        diceManager.ChangeAllDice();
+        SetText();
     }
 
     public void Attack(int damage)
@@ -43,5 +59,18 @@ public class BattleManager : MonoBehaviour
         enemyHpSlider.value = enemyCurHP/enemyMaxHP;
         enemyHpText.text = enemyCurHP.ToString();
 
+    }
+
+
+    public void SetText()
+    {
+        
+        for(int i = 0; i < skills.Length;i++)
+        {
+
+            skills[i].GetComponentInChildren<Text>().text = diceManager.GetDamege(i).ToString();
+            skills[i].GetComponent<TESTSKILL>().AD = diceManager.GetDamege(i);
+
+        }
     }
 }
