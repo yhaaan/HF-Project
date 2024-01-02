@@ -10,7 +10,6 @@ using UnityEngine.UI;
 
 public class DiceManager : MonoBehaviour
 {
-    public int testSkillNum = 1;
     public List<Dice> dices = new List<Dice>();
 
     private void OnEnable()
@@ -77,9 +76,8 @@ public class DiceManager : MonoBehaviour
     public int GetUpperDamage(int diceNum)
     {
         int damage = 0;
-        for (int i = 1; i <= 5; i++)
+        foreach(Dice dice in dices)
         {
-            Dice dice = dices[i] ;
             if(dice.num == diceNum)
             {
                 damage += dice.num;
@@ -95,9 +93,8 @@ public class DiceManager : MonoBehaviour
     public int GetChoiceDamage()
     {
         int damage = 0;
-        for (int i = 1; i <= 5; i++)
+        foreach (Dice dice in dices)
         {
-            Dice dice = dices[i] ;
             damage += dice.num;
         }
         return damage;
@@ -110,9 +107,8 @@ public class DiceManager : MonoBehaviour
     {
         int damage = 0;
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
-        for (int i = 1; i <= 5; i++)
+        foreach(Dice dice in dices)
         {
-            Dice dice = dices[i] ;
             if(sortDict.ContainsKey(dice.num))
             {
                 sortDict[dice.num] += 1;
@@ -138,9 +134,8 @@ public class DiceManager : MonoBehaviour
     {
         int damage = 0;
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
-        for (int i = 1; i <= 5; i++)
+        foreach(Dice dice in dices)
         {
-            Dice dice = dices[i] ;
             if(sortDict.ContainsKey(dice.num))
             {
                 sortDict[dice.num] += 1;
@@ -166,9 +161,8 @@ public class DiceManager : MonoBehaviour
     public int GetStraightDamage(int straightNum)
     {
         List<int> diceNums = new List<int>();
-        for (int i = 1; i <= 5; i++)
+        foreach(Dice dice in dices)
         {
-            Dice dice = dices[i] ;
             diceNums.Add(dice.num);
         }
         diceNums.Sort();
@@ -206,9 +200,8 @@ public class DiceManager : MonoBehaviour
     public int GetYachtDamage()
     {
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
-        for (int i = 1; i <= 5; i++)
+        foreach(Dice dice in dices)
         {
-            Dice dice = dices[i] ;
             if(sortDict.ContainsKey(dice.num))
             {
                 sortDict[dice.num] += 1;
