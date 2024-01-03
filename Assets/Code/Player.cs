@@ -7,11 +7,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float maxHP = 100;
+    public float maxHP;
     public float curruntHP;
 
 
-    void OnEnable()
+    void Awake()
     {
         curruntHP = maxHP;
     }

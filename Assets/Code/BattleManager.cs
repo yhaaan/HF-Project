@@ -64,13 +64,15 @@ public class BattleManager : MonoBehaviour
 
     public void SetText()
     {
+       // skills[2].GetComponentInChildren<Text>().text = " 123";
         
-        for(int i = 0; i < skills.Length;i++)
+        for (int i = 0; i < skills.Length;i++)
         {
 
             skills[i].GetComponentInChildren<Text>().text = diceManager.GetDamege(i).ToString();
             skills[i].GetComponent<TESTSKILL>().AD = diceManager.GetDamege(i);
 
         }
+        
     }
 }

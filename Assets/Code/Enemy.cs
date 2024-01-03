@@ -7,7 +7,7 @@ using UnityEngine;
  */
 public class Enemy : MonoBehaviour
 {
-    public float maxHP= 2000;
+    public float maxHP;
     public float curruntHP;
     void OnEnable()
     {
