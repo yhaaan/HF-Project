@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /*
- * Desc :: ½ºÅ³ »ç¿ë
- * SkillButtonÀÇ ÄÄÆ÷³ÍÆ®
- * battlemanager¸¦ À¯´ÏÆ¼¿¡¼­ ÇÒ´çÇØÁà¾ßÇÏ´Â ¹®Á¦°¡ ÀÖÀ½
+ * Desc :: ï¿½ï¿½Å³ ï¿½ï¿½ï¿½
+ * SkillButtonï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+ * battlemanagerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 
 public class TESTSKILL : MonoBehaviour
@@ -14,10 +15,17 @@ public class TESTSKILL : MonoBehaviour
     public int AD = 5;
     
     public BattleManager battlemanager;
+    public Button button;
     
+    public void Awake()
+    {
+        button = this.GetComponent<Button>();
+    }
     public void Attack()
     {
         battlemanager.Attack(AD);
+        battlemanager.EndPlayerTurn();
+        button.interactable = false;
     }
     public void Heal()
     {

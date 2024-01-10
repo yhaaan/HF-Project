@@ -1347,6 +1347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 2000
   curruntHP: 100
+  remainingRolls: 0
 --- !u!1001 &602352297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3015,6 +3016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AD: 100
   battlemanager: {fileID: 722605244}
+  button: {fileID: 0}
 --- !u!1 &1379353204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,6 +3438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 2000
   curruntHP: 2000
+  remainingRolls: 0
 --- !u!1 &1610809567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,6 +3647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AD: 500
   battlemanager: {fileID: 722605244}
+  button: {fileID: 0}
 --- !u!114 &1704636415
 MonoBehaviour:
   m_ObjectHideFlags: 0

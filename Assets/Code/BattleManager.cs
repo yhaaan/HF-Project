@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * Desc :: ¹èÆ²°ú °ü·ÃµÈ Àâ¹« ¼öÇà
+ * Desc :: ï¿½ï¿½Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½â¹« ï¿½ï¿½ï¿½ï¿½
  */
 public class BattleManager : MonoBehaviour
 {
@@ -44,6 +44,11 @@ public class BattleManager : MonoBehaviour
         skills = skillButtons.GetComponentsInChildren<Button>();
     }
 
+    private void Start()
+    {
+        StartPlayerTurn();
+    }
+
 
     public void Reroll()
     {
@@ -68,11 +73,24 @@ public class BattleManager : MonoBehaviour
         
         for (int i = 0; i < skills.Length;i++)
         {
-
-            skills[i].GetComponentInChildren<Text>().text = diceManager.GetDamege(i).ToString();
-            skills[i].GetComponent<TESTSKILL>().AD = diceManager.GetDamege(i);
-
+            if(skills[i].interactable)
+            {
+                skills[i].GetComponentInChildren<Text>().text = diceManager.GetDamege(i).ToString();
+                skills[i].GetComponent<TESTSKILL>().AD = diceManager.GetDamege(i);
+            }
         }
         
+    }
+    public void StartPlayerTurn()
+    {
+        Reroll();
+    }
+    public void EndPlayerTurn()
+    {
+
+    }
+    public void StartEnemyTurn()
+    {
+
     }
 }

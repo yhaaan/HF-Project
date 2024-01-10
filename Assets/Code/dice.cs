@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * Desc :: °¢°¢ÀÇ ÁÖ»çÀ§ Á¤º¸
- * ÁÖ»çÀ§ÀÇ Sprite³ª Mouse ÀÌº¥Æ® µîÀ» Ã³¸® 
+ * Desc :: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ Spriteï¿½ï¿½ Mouse ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ 
  */
 public class Dice : MonoBehaviour
 {
@@ -22,7 +22,6 @@ public class Dice : MonoBehaviour
         isKept = false;
         sprite = GetComponent<SpriteRenderer>();
         trans = GetComponent<Transform>();
-        ChangeN();
     }
 
     public void ChangeN()
