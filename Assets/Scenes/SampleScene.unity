@@ -1408,8 +1408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c45abd030ea964ebc62fcbaa7c3fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2000
-  curruntHP: 100
+  maxHP: 150
+  curruntHP: 150
   remainingRolls: 0
 --- !u!1001 &602352297
 PrefabInstance:
@@ -3152,9 +3152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470f379ebbf78424c8ab19c3937f324d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0
+  power: 100
   useLimit: 1
-  battleManager: {fileID: 0}
+  battleManager: {fileID: 722605244}
   button: {fileID: 0}
 --- !u!1 &1379353204
 GameObject:
@@ -3616,8 +3616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3442ad0ecddbbaf489f70fe775527fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2000
-  curruntHP: 2000
+  maxHP: 150
+  curruntHP: 150
   remainingRolls: 0
 --- !u!1 &1610809567
 GameObject:
@@ -3919,9 +3919,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470f379ebbf78424c8ab19c3937f324d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0
+  power: 100
   useLimit: 1
-  battleManager: {fileID: 0}
+  battleManager: {fileID: 722605244}
   button: {fileID: 0}
 --- !u!224 &1711092367 stripped
 RectTransform:

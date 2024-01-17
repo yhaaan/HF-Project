@@ -18,6 +18,17 @@ public class DiceManager : MonoBehaviour
         dices = this.GetComponentsInChildren<Dice>();
     }
 
+    public void ClearAllKeep()
+    {
+        foreach(Dice dice in dices)
+        {
+          
+            if(dice.isKept)
+            {
+                dice.Keep();
+            }
+        }
+    }
     public void RollTheDice()
     {
         
@@ -77,7 +88,7 @@ public class DiceManager : MonoBehaviour
     }
    
 
-    public int GetUpperDamage(int diceNum)
+    private int GetUpperDamage(int diceNum)
     {
         int damage = 0;
 
@@ -96,7 +107,7 @@ public class DiceManager : MonoBehaviour
     /// </summary>
     /// <param name="dices">스킬에 사용할 다섯개 주사위</param>
     /// <returns></returns>
-    public int GetChoiceDamage()
+    private int GetChoiceDamage()
     {
         int damage = 0;
         foreach (Dice dice in dices)
@@ -110,7 +121,7 @@ public class DiceManager : MonoBehaviour
     /// FourKind의 스킬 데미지를 반환
     /// </summary>
     /// <returns></returns>
-    public int GetFourKindDamage()
+    private int GetFourKindDamage()
     {
         int damage = 0;
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
@@ -138,7 +149,7 @@ public class DiceManager : MonoBehaviour
     /// FullHouse의 스킬 데미지를 반환
     /// </summary>
     /// <returns></returns>
-    public int GetFullHouseDamage()
+    private int GetFullHouseDamage()
     {
         int damage = 0;
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
@@ -167,7 +178,7 @@ public class DiceManager : MonoBehaviour
     /// </summary>
     /// <param name="straightNum"></param>
     /// <returns></returns>
-    public int GetStraightDamage(int straightNum)
+    private int GetStraightDamage(int straightNum)
     {
         List<int> diceNums = new List<int>();
         foreach (Dice dice in dices)
@@ -207,7 +218,7 @@ public class DiceManager : MonoBehaviour
     /// FullHouse의 스킬 데미지를 반환
     /// </summary>
     /// <returns></returns>
-    public int GetYachtDamage()
+    private int GetYachtDamage()
     {
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
         foreach (Dice dice in dices)

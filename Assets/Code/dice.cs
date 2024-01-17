@@ -30,6 +30,11 @@ public class Dice : MonoBehaviour
     
     public void OnMouseDown()
     {
+        Keep();
+    }
+
+    public void Keep()
+    {
         if(isKept)
         {
             isKept = false;

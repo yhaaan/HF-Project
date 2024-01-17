@@ -98,7 +98,7 @@ public class BattleManager : MonoBehaviour
     }
     public void StartPlayerTurn()
     {
-        Reroll();
+        
         for (int i = 0; i < skills.Length; i++)
         {
             if (skills[i].GetComponent<Skill>().useLimit > 0)
@@ -114,19 +114,23 @@ public class BattleManager : MonoBehaviour
         {
             skills[i].interactable = false;
         }
+        diceManager.ClearAllKeep();
         StartEnemyTurn();
     }
     public void StartEnemyTurn()
     {
-        StartCoroutine(TestWaitTime());
+        StartCoroutine(TestEnemy());
         
     }
 
-    private IEnumerator TestWaitTime()
+    private IEnumerator TestEnemy()
     {
         Debug.Log("Enemy turn...");
-        yield return new WaitForSeconds(3f);
-        AttackPlayer(Random.Range(100, 200));
+        yield return new WaitForSeconds(1f);
+        diceManager.RollTheDice();
+        yield return new WaitForSeconds(1f);
+        AttackPlayer(diceManager.GetDamage(6));
+        yield return new WaitForSeconds(1f);
         StartPlayerTurn();
         
     }
