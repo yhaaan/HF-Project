@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 673024065879755531}
   - component: {fileID: 3709305366251558573}
   - component: {fileID: 6865593850397470923}
-  - component: {fileID: 3498592447607201592}
+  - component: {fileID: 1385898730306094369}
   m_Layer: 5
   m_Name: skillButton
   m_TagString: Untagged
@@ -201,9 +201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3498592447607201592}
-        m_TargetAssemblyTypeName: TESTSKILL, Assembly-CSharp
-        m_MethodName: Attack
+      - m_Target: {fileID: 1385898730306094369}
+        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
+        m_MethodName: UseSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -213,7 +213,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3498592447607201592
+--- !u!114 &1385898730306094369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,8 +222,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8634459692828191377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b2e665813d7a044acaca23b23aac51, type: 3}
+  m_Script: {fileID: 11500000, guid: 470f379ebbf78424c8ab19c3937f324d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AD: 5
-  battlemanager: {fileID: 0}
+  power: 0
+  useLimit: 1
+  battleManager: {fileID: 0}
+  button: {fileID: 0}

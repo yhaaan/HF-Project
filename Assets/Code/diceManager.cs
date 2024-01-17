@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,19 @@ using UnityEngine.UI;
 
 public class DiceManager : MonoBehaviour
 {
-    public int testSkillNum = 1;
-    public List<Dice> dices = new List<Dice>();
+    public Dice[] dices;
 
-    private void OnEnable()
+    private void Awake()
     {
-        
+        dices = this.GetComponentsInChildren<Dice>();
     }
 
-    public void ChangeAllDice()
+    public void RollTheDice()
     {
+        
         foreach(Dice dice in dices)
         {
+          
             if(!dice.isKept)
             {
                 dice.ChangeN();
@@ -29,6 +31,7 @@ public class DiceManager : MonoBehaviour
         }
 
     }
+    
     /// <summary>
     /// 스킬번호를 입력받아 1~6번 스킬의 데미지를 반환
     /// </summary>
@@ -37,7 +40,7 @@ public class DiceManager : MonoBehaviour
     /// <returns></returns>
     
    
-    public int GetDamege(int skillNum)
+    public int GetDamage(int skillNum)
     {
         if (skillNum < 6)
         {
@@ -77,14 +80,15 @@ public class DiceManager : MonoBehaviour
     public int GetUpperDamage(int diceNum)
     {
         int damage = 0;
-        for (int i = 1; i <= 5; i++)
+
+        foreach (Dice dice in dices)
         {
-            Dice dice = dices[i] ;
             if(dice.num == diceNum)
             {
                 damage += dice.num;
             }
         }
+
         return damage;
     }
     /// <summary>
@@ -95,9 +99,9 @@ public class DiceManager : MonoBehaviour
     public int GetChoiceDamage()
     {
         int damage = 0;
-        for (int i = 1; i <= 5; i++)
+        foreach (Dice dice in dices)
         {
-            Dice dice = dices[i] ;
+            
             damage += dice.num;
         }
         return damage;
@@ -110,9 +114,9 @@ public class DiceManager : MonoBehaviour
     {
         int damage = 0;
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
-        for (int i = 1; i <= 5; i++)
+        foreach (Dice dice in dices)
         {
-            Dice dice = dices[i] ;
+            
             if(sortDict.ContainsKey(dice.num))
             {
                 sortDict[dice.num] += 1;
@@ -138,9 +142,9 @@ public class DiceManager : MonoBehaviour
     {
         int damage = 0;
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
-        for (int i = 1; i <= 5; i++)
+        foreach (Dice dice in dices)
         {
-            Dice dice = dices[i] ;
+            
             if(sortDict.ContainsKey(dice.num))
             {
                 sortDict[dice.num] += 1;
@@ -166,9 +170,9 @@ public class DiceManager : MonoBehaviour
     public int GetStraightDamage(int straightNum)
     {
         List<int> diceNums = new List<int>();
-        for (int i = 1; i <= 5; i++)
+        foreach (Dice dice in dices)
         {
-            Dice dice = dices[i] ;
+            
             diceNums.Add(dice.num);
         }
         diceNums.Sort();
@@ -206,9 +210,9 @@ public class DiceManager : MonoBehaviour
     public int GetYachtDamage()
     {
         var sortDict = new Dictionary<int, int>();  //<주사위눈, 주사위 갯수>
-        for (int i = 1; i <= 5; i++)
+        foreach (Dice dice in dices)
         {
-            Dice dice = dices[i] ;
+            
             if(sortDict.ContainsKey(dice.num))
             {
                 sortDict[dice.num] += 1;

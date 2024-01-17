@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 
 /*
  * Desc :: ������ �ֻ��� ����
@@ -10,25 +8,24 @@ using UnityEngine.UI;
  */
 public class Dice : MonoBehaviour
 {
-    public int num;
-    public int power;
-    public bool isKept;
-    public Sprite[] diceImage;
-    private SpriteRenderer sprite;
-    private Transform trans;
+    public int num; //주사위의 눈금
+    public bool isKept = false;
+    public Sprite[] diceImages;
+    private SpriteRenderer diceSprite;
+
 
     private void Awake()
     {
         isKept = false;
-        sprite = GetComponent<SpriteRenderer>();
-        trans = GetComponent<Transform>();
+        diceSprite = GetComponent<SpriteRenderer>();
+
     }
 
     public void ChangeN()
     {
         num = Random.Range(1, 7);
-        power = num;
-        sprite.sprite = diceImage[num];
+
+        diceSprite.sprite = diceImages[num];
     }
     
     public void OnMouseDown()
@@ -36,15 +33,11 @@ public class Dice : MonoBehaviour
         if(isKept)
         {
             isKept = false;
-            trans.rotation = Quaternion.Euler(0,0,0);
+            transform.rotation = Quaternion.Euler(0,0,0);
         } else if (!isKept)
         {
             isKept = true;
-            trans.rotation = Quaternion.Euler(0,0,45);
+            transform.rotation = Quaternion.Euler(0,0,45);
         }
-    }
-    void Update()
-    {
-        
     }
 }
