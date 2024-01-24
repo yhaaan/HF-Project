@@ -56,8 +56,8 @@ public class BattleManager : MonoBehaviour
 
     public void Reroll()
     {
-        diceManager.RollTheDice();
-        SetText();
+        diceManager.RollAllDice();
+        SetSkillDamage();
     }
 
     public void AttackEnemy(int damage)
@@ -81,24 +81,21 @@ public class BattleManager : MonoBehaviour
     }
 
 
-    public void SetText()
+    public void SetSkillDamage()
     {
-       // skills[2].GetComponentInChildren<Text>().text = " 123";
-        
-        for (int i = 0; i < skills.Length;i++)
+        for (int i = 0; i < skills.Length; i++)
         {
-            if(skills[i].interactable)
+            if (skills[i].interactable)
             {
                 int damage = diceManager.GetDamage(i);
                 skills[i].GetComponentInChildren<Text>().text = damage.ToString();
                 skills[i].GetComponent<Skill>().power = damage;
             }
         }
-        
     }
+    
     public void StartPlayerTurn()
     {
-        
         for (int i = 0; i < skills.Length; i++)
         {
             if (skills[i].GetComponent<Skill>().useLimit > 0)
@@ -106,7 +103,6 @@ public class BattleManager : MonoBehaviour
                 skills[i].interactable = true;
             }
         }
-
     }
     public void EndPlayerTurn()
     {
@@ -114,20 +110,19 @@ public class BattleManager : MonoBehaviour
         {
             skills[i].interactable = false;
         }
-        diceManager.ClearAllKeep();
+        diceManager.UnKeepAllDice();
         StartEnemyTurn();
     }
     public void StartEnemyTurn()
     {
         StartCoroutine(TestEnemy());
-        
     }
 
     private IEnumerator TestEnemy()
     {
         Debug.Log("Enemy turn...");
         yield return new WaitForSeconds(1f);
-        diceManager.RollTheDice();
+        diceManager.RollAllDice();
         yield return new WaitForSeconds(1f);
         AttackPlayer(diceManager.GetDamage(6));
         yield return new WaitForSeconds(1f);

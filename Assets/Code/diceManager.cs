@@ -18,26 +18,23 @@ public class DiceManager : MonoBehaviour
         dices = this.GetComponentsInChildren<Dice>();
     }
 
-    public void ClearAllKeep()
+    public void UnKeepAllDice()
     {
         foreach(Dice dice in dices)
         {
-          
             if(dice.isKept)
             {
-                dice.Keep();
+                dice.ToggleKeptStatus();
             }
         }
     }
-    public void RollTheDice()
+    public void RollAllDice()
     {
-        
         foreach(Dice dice in dices)
         {
-          
             if(!dice.isKept)
             {
-                dice.ChangeN();
+                dice.Roll();
             }
         }
 

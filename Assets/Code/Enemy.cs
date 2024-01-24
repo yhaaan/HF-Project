@@ -7,6 +7,7 @@ using UnityEngine;
  */
 public class Enemy : MonoBehaviour
 {
+    
     public float maxHP;
     public float curruntHP;
     public int remainingRolls;

@@ -3,8 +3,7 @@ using UnityEngine;
 
 
 /*
- * Desc :: ������ �ֻ��� ����
- * �ֻ����� Sprite�� Mouse �̺�Ʈ ���� ó�� 
+ * Desc :: 주사위
  */
 public class Dice : MonoBehaviour
 {
@@ -21,19 +20,18 @@ public class Dice : MonoBehaviour
 
     }
 
-    public void ChangeN()
+    public void Roll()
     {
         num = Random.Range(1, 7);
-
         diceSprite.sprite = diceImages[num];
     }
     
     public void OnMouseDown()
     {
-        Keep();
+        ToggleKeptStatus();
     }
 
-    public void Keep()
+    public void ToggleKeptStatus()
     {
         if(isKept)
         {
