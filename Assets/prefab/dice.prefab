@@ -143,10 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7303f4fe3f3423945bd7041678c9e1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 0
-  power: 0
+  force: 0
   isKept: 0
-  diceImage:
+  diceImages:
   - {fileID: 21300000, guid: 2471fb39fc504b34ca1c83baef7c7c40, type: 3}
   - {fileID: 21300000, guid: b1666e0f027a24b4298ee3a9b0f2b948, type: 3}
   - {fileID: 21300000, guid: c1cc6c6a503f2e44f997f37f4e68ab58, type: 3}

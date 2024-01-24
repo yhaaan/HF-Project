@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 /*
- * Desc :: ¹èÆ²°ú °ü·ÃµÈ Àâ¹« ¼öÇà
+ * Desc :: ï¿½ï¿½Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½â¹« ï¿½ï¿½ï¿½ï¿½
  */
 public class BattleManager : MonoBehaviour
 {
@@ -31,27 +32,35 @@ public class BattleManager : MonoBehaviour
 
     private void Awake()
     {
+        //set player info 
         playerMaxHP = player.maxHP;
         playerCurHP = player.curruntHP;
         playerHpSlider.value = playerCurHP/ playerMaxHP;
         playerHpText.text = playerCurHP.ToString();
-
+        //set enemy info
         enemyMaxHP = enemy.maxHP;
         enemyCurHP = enemy.curruntHP;
         enemyHpSlider.value = enemyCurHP / enemyMaxHP;
         enemyHpText.text = enemyCurHP.ToString();
 
         skills = skillButtons.GetComponentsInChildren<Button>();
+
+      
+        
     }
 
+    private void Start()
+    {
+        StartPlayerTurn();
+    }
 
     public void Reroll()
     {
-        diceManager.ChangeAllDice();
-        SetText();
+        diceManager.RollAllDice();
+        SetSkillDamage();
     }
 
-    public void Attack(int damage)
+    public void AttackEnemy(int damage)
     {
         enemyCurHP -= damage;
         if (enemyCurHP < 0) enemyCurHP = 0;
@@ -60,19 +69,64 @@ public class BattleManager : MonoBehaviour
         enemyHpText.text = enemyCurHP.ToString();
 
     }
-
-
-    public void SetText()
+    
+    public void AttackPlayer(int damage)
     {
-       // skills[2].GetComponentInChildren<Text>().text = " 123";
-        
-        for (int i = 0; i < skills.Length;i++)
+        playerCurHP -= damage;
+        if (playerCurHP < 0) playerCurHP = 0;
+        if (playerCurHP > playerMaxHP) playerCurHP = playerMaxHP;
+        playerHpSlider.value = playerCurHP/playerMaxHP;
+        playerHpText.text = playerCurHP.ToString();
+
+    }
+
+
+    public void SetSkillDamage()
+    {
+        for (int i = 0; i < skills.Length; i++)
         {
-
-            skills[i].GetComponentInChildren<Text>().text = diceManager.GetDamege(i).ToString();
-            skills[i].GetComponent<TESTSKILL>().AD = diceManager.GetDamege(i);
-
+            if (skills[i].interactable)
+            {
+                int damage = diceManager.GetDamage(i);
+                skills[i].GetComponentInChildren<Text>().text = damage.ToString();
+                skills[i].GetComponent<Skill>().power = damage;
+            }
         }
+    }
+    
+    public void StartPlayerTurn()
+    {
+        for (int i = 0; i < skills.Length; i++)
+        {
+            if (skills[i].GetComponent<Skill>().useLimit > 0)
+            {
+                skills[i].interactable = true;
+            }
+        }
+    }
+    public void EndPlayerTurn()
+    {
+        for (int i = 0; i < skills.Length; i++)
+        {
+            skills[i].interactable = false;
+        }
+        diceManager.UnKeepAllDice();
+        StartEnemyTurn();
+    }
+    public void StartEnemyTurn()
+    {
+        StartCoroutine(TestEnemy());
+    }
+
+    private IEnumerator TestEnemy()
+    {
+        Debug.Log("Enemy turn...");
+        yield return new WaitForSeconds(1f);
+        diceManager.RollAllDice();
+        yield return new WaitForSeconds(1f);
+        AttackPlayer(diceManager.GetDamage(6));
+        yield return new WaitForSeconds(1f);
+        StartPlayerTurn();
         
     }
 }
