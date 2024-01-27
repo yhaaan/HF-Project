@@ -9,25 +9,23 @@ public class Enemy : MonoBehaviour
 {
     
     public float maxHP;
-    public float curruntHP;
-    public int remainingRolls;
-    public SortedSet<int> reamainingSkillNum;
-    void OnEnable()
+    public float currentHP;
+    //public int remainingRolls;
+    //public SortedSet<int> reamainingSkillNum;
+    void Awake()
     {
-        curruntHP = maxHP;
+        currentHP = maxHP;
     }
-    public void ReduceHP(int damage)
+    public void attacked(int power)
     {
-        if(damage <= curruntHP)
-        {
-            curruntHP -= damage;
-        } else if (damage > curruntHP)
-        {
-            curruntHP = 0;
-        }
+        currentHP -= power;
+        if (currentHP < 0) currentHP = 0;
+        if (currentHP > maxHP) currentHP = maxHP;
     }
-    public void RemoveSkillNum(int skillNum)
+
+    public void Heal(int power)
     {
-        reamainingSkillNum.Remove(skillNum);
+        currentHP += power;
+        if (currentHP > maxHP) currentHP = maxHP;
     }
 }

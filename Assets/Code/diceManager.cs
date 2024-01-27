@@ -50,31 +50,31 @@ public class DiceManager : MonoBehaviour
    
     public int GetDamage(int skillNum)
     {
-        if (skillNum < 6)
+        if (skillNum < 7)
         {
             return GetUpperDamage(skillNum+1);
         }
-        else if (skillNum == 6)
+        else if (skillNum == 7)
         {
           return GetChoiceDamage();
         }
-        else if (skillNum == 7)
+        else if (skillNum == 8)
         {
             return GetFourKindDamage();
         }
-        else if (skillNum == 8)
+        else if (skillNum == 9)
         {
             return GetFullHouseDamage();
         }
-        else if (skillNum == 9)
+        else if (skillNum == 10)
         {
             return GetStraightDamage(4);
         }
-        else if (skillNum == 10)
+        else if (skillNum == 11)
         {
             return GetStraightDamage(5);
         }
-        else if (skillNum == 11)
+        else if (skillNum == 12)
         {
             return GetYachtDamage();
         }
